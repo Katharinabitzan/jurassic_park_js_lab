@@ -37,7 +37,7 @@ Park.prototype.mostValuableDino = function(){
 // returns an empty array??
 Park.prototype.findBySpecies = function(species){
   let selected = []
-  for (dino in this.dinosaurs){
+  for (dino of this.dinosaurs){
     if (dino.species === species){
       selected.push(dino)
     };
@@ -54,10 +54,10 @@ Park.prototype.findBySpecies = function(species){
 //Returning a function
 Park.prototype.totalVisitorsPerDay = function(){
   let totalVisitors = 0
-  for (dino in this.dinosaurs){
+  for (dino of this.dinosaurs){
     totalVisitors += dino.guestsAttractedPerDay;
   }
-  return totalVisitors;
+  {return totalVisitors};
 }
 
 Park.prototype.totalVisitorsPerYear = function(){
